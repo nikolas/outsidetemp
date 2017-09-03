@@ -19,7 +19,7 @@ var (
 )
 
 func main() {
-	flag.Usage = usage
+	var zipcode = flag.Int("zipcode", 10031, "Zip code")
 	flag.Parse()
 
 	os.Setenv("OWM_API_KEY", "f8f1950288803dad518aa1cb95c2462d")
@@ -29,14 +29,8 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	w.CurrentByName("NewYork")
+	w.CurrentByZip(*zipcode, "US")
 	fmt.Printf("%f degrees outside\n", w.Main.Temp)
 
 	os.Exit(exitCode)
-}
-
-func usage() {
-	fmt.Fprintf(os.Stderr, "usage: outsidetemp [zipcode]\n")
-	flag.PrintDefaults()
-	os.Exit(2)
 }
