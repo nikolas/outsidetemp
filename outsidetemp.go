@@ -22,6 +22,8 @@ func main() {
 	flag.Usage = usage
 	flag.Parse()
 
+	os.Setenv("OWM_API_KEY", "f8f1950288803dad518aa1cb95c2462d")
+
 	w, err := owm.NewCurrent("F", "en")
 	if err != nil {
 		log.Fatalln(err)
