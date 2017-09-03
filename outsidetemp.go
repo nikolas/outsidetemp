@@ -30,7 +30,7 @@ func main() {
 	}
 
 	w.CurrentByZip(*zipcode, "US")
-	fmt.Printf("%f degrees outside\n", w.Main.Temp)
+	fmt.Printf("%.2f degrees outside\n", w.Main.Temp)
 
 	os.Exit(exitCode)
 }
