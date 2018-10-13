@@ -23,7 +23,7 @@ func main() {
 	flag.Parse()
 
 	os.Setenv("OWM_API_KEY", "f8f1950288803dad518aa1cb95c2462d")
-    var apiKey = os.Getenv("OWM_API_KEY")
+	var apiKey = os.Getenv("OWM_API_KEY")
 
 	w, err := owm.NewCurrent("F", "en", apiKey)
 	if err != nil {
